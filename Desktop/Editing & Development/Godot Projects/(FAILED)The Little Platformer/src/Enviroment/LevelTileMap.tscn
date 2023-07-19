@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnb0rgjrc1bmv"]
+
+[ext_resource type="Texture2D" uid="uid://nf4x7asps3nx" path="res://Assets/Enviroment/Floor1.png" id="1_ebmd5"]
+[ext_resource type="Texture2D" uid="uid://juncyddyev2n" path="res://Assets/Enviroment/Slope1.png" id="2_skrr1"]
+[ext_resource type="Texture2D" uid="uid://jmx4j27hsbmr" path="res://Assets/Enviroment/Slope2.png" id="3_6j643"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qmkk3"]
+resource_name = "Floor"
+texture = ExtResource("1_ebmd5")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpgic"]
+resource_name = "Slope_Left"
+texture = ExtResource("2_skrr1")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.1875, 0, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11itv"]
+resource_name = "Slope_Right"
+texture = ExtResource("3_6j643")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0.8125, 1.125, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_4fx2v"]
+physics_layer_0/collision_layer = 2
+sources/1 = SubResource("TileSetAtlasSource_qmkk3")
+sources/2 = SubResource("TileSetAtlasSource_vpgic")
+sources/3 = SubResource("TileSetAtlasSource_11itv")
+
+[node name="LevelTileMap" type="TileMap"]
+tile_set = SubResource("TileSet_4fx2v")
+format = 2
